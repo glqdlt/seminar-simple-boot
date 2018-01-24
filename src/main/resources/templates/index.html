@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8"/>
+    <title>Dashboard</title>
+
+    <meta name="description" content="Dashboard"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon"/>
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<!-- Loading Container -->
+<div class="loading-container">
+    <div class="loader"></div>
+</div>
+<!--  /Loading Container -->
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="navbar-container">
+            <!-- Navbar Barnd -->
+            <div class="navbar-header pull-left">
+                <a href="/" class="navbar-brand">
+                    <small>
+                        <img style="width: 140px; height: 22px; margin-top: 9px" src="/assets/img/logo.png" alt=""/>
+                    </small>
+                </a>
+            </div>
+            <!-- /Navbar Barnd -->
+            <!-- Sidebar Collapse -->
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="collapse-icon fa fa-bars"></i>
+            </div>
+            <!-- /Sidebar Collapse -->
+            <!-- Account Area and Settings --->
+            <div class="navbar-header pull-right">
+                <div class="navbar-account">
+                    <ul class="account-area" style="margin-right: -40px">
+                        <li>
+                            <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                <section>
+                                    <h2 style="min-width: 100px"><span class="profile" style="text-align: right"
+                                                                       sec:authorize="isAuthenticated()">
+                                        <span sec:authentication="name"></span>
+                                    </span>
+                                    </h2>
+                                </section>
+                            </a>
+                            <!--Login Area Dropdown-->
+                            <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                <li class="username"><a>Admin</a></li>
+                                <li class="dropdown-footer">
+                                    <a href="/auth/logout">
+                                        Sign out
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--/Login Area Dropdown-->
+                        </li>
+                        <!-- /Account Area -->
+                    </ul>
+                </div>
+            </div>
+            <!-- /Account Area and Settings -->
+        </div>
+    </div>
+</div>
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+
+        <!-- Page Sidebar -->
+        <div class="page-sidebar" id="sidebar">
+            <!-- Page Sidebar Header-->
+            <!--<div class="sidebar-header-wrapper">-->
+            <!--<input type="text" class="searchinput" />-->
+            <!--<i class="searchicon fa fa-search"></i>-->
+            <!--<div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>-->
+            <!--</div>-->
+            <!-- /Page Sidebar Header -->
+            <!-- Sidebar Menu -->
+            <ul class="nav sidebar-menu">
+                <!--Dashboard-->
+                <li class="active">
+                    <a href="/">
+                        <i class="menu-icon glyphicon glyphicon-home"></i>
+                        <span class="menu-text"> Home </span>
+                    </a>
+                </li>
+                <!--More Pages-->
+                <li>
+                    <a href="#" class="menu-dropdown">
+                        <i class="menu-icon glyphicon glyphicon-link"></i>
+
+                        <span class="menu-text">
+                                BOok Manager
+                            </span>
+
+                        <i class="menu-expand"></i>
+                    </a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="book/list">
+                                <span class="menu-text">Book List</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <!-- /Sidebar Menu -->
+        </div>
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>Home
+                    </li>
+                    <li class="active">Dashboard</li>
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="widget" style="padding-bottom: 600px">
+                            <div class="widget-header">
+                                <span class="widget-caption">
+                                    Dashboard
+                                </span>
+
+                            </div>
+                            <div class="widget-body">
+
+                                <h2>Welcome to Altiplex</h2>
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /Page Body -->
+        </div>
+        <!-- /Page Content -->
+
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+
+</div>
+
+<!--Basic Scripts-->
+<script src="/assets/js/jquery.min.js"></script>
+
+</body>
+<!--  /Body -->
+</html>

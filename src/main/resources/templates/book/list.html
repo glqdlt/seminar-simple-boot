@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 1.6.0
+Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB06R48S4
+-->
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8"/>
+    <title>Dashboard</title>
+
+    <meta name="description" content="Dashboard"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<!-- Loading Container -->
+<div class="loading-container">
+    <div class="loader"></div>
+</div>
+<!--  /Loading Container -->
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="navbar-container">
+            <!-- Navbar Barnd -->
+            <div class="navbar-header pull-left">
+                <a href="/" class="navbar-brand">
+                    <small>
+                        <img style="width: 140px; height: 22px; margin-top: 9px" src="/assets/img/logo.png" alt=""/>
+                    </small>
+                </a>
+            </div>
+            <!-- /Navbar Barnd -->
+            <!-- Sidebar Collapse -->
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="collapse-icon fa fa-bars"></i>
+            </div>
+            <!-- /Sidebar Collapse -->
+            <!-- Account Area and Settings --->
+            <div class="navbar-header pull-right">
+                <div class="navbar-account">
+                    <ul class="account-area" style="margin-right: -40px">
+                        <li>
+                            <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                <section>
+                                    <h2 style="min-width: 100px"><span class="profile" style="text-align: right" sec:authorize="isAuthenticated()">
+                                        <span sec:authentication="name"></span>
+                                    </span></h2>
+                                </section>
+                            </a>
+                            <!--Login Area Dropdown-->
+                            <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                <li class="username"><a>Admin</a></li>
+                                <li class="dropdown-footer">
+                                    <a href="/auth/logout">
+                                        Sign out
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--/Login Area Dropdown-->
+                        </li>
+                        <!-- /Account Area -->
+                    </ul>
+                </div>
+            </div>
+            <!-- /Account Area and Settings -->
+        </div>
+    </div>
+</div>
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+
+        <!-- Page Sidebar -->
+        <div class="page-sidebar" id="sidebar">
+            <!-- Page Sidebar Header-->
+            <!-- /Page Sidebar Header -->
+            <!-- Sidebar Menu -->
+            <ul class="nav sidebar-menu">
+                <!--Dashboard-->
+                <li>
+                    <a href="/">
+                        <i class="menu-icon glyphicon glyphicon-home"></i>
+                        <span class="menu-text"> Home </span>
+                    </a>
+                </li>
+                <!--More Pages-->
+                <li class="open">
+                    <a class="menu-dropdown" href="#">
+                        <i class="menu-icon glyphicon glyphicon-link"></i>
+
+                        <span class="menu-text">
+                                Book Manager
+                            </span>
+
+                        <i class="menu-expand"></i>
+                    </a>
+
+                    <ul class="submenu" style="display:block;">
+                        <li>
+                            <a href="/book/list">
+                                <span class="menu-text">Book List</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--<li>-->
+                    <!--<a href="javascript:void(0)">-->
+                        <!--<i class="menu-icon glyphicon glyphicon-fire themesecondary"></i>-->
+                        <!--<span class="menu-text">-->
+                                <!--Version 0.0.1-->
+                            <!--</span>-->
+                    <!--</a>-->
+                <!--</li>-->
+            </ul>
+            <!-- /Sidebar Menu -->
+        </div>
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                       Book Manager
+                    </li>
+                    <li class="active">Book List</li>
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="widget">
+                            <div class="widget-header ">
+                                <span class="widget-caption">Book Data</span>
+                                <div class="widget-buttons">
+                                    <!--<a href="#" data-toggle="maximize">-->
+                                        <!--<i class="fa fa-expand"></i>-->
+                                    <!--</a>-->
+                                    <a href="#" data-toggle="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                    <a href="#" data-toggle="dispose">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <div class="form-inline" style="margin-bottom: 12px; margin-top: 6px">
+                                    <div class="form-group">
+                                        <select id="status-area">
+                                            <option value="0" selected>All</option>
+                                            <option value="1">FAIL</option>
+                                            <option value="2">SUCCESS</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="controls">
+                                            <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span><input type="text" class="form-control" id="reservation">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-blue" onclick="searchRender()"><i class="fa fa-search"></i></button>
+                                    <button class="btn btn-red" onclick="searchReset()"><i class="fa fa-refresh"></i></button>
+                                </div>
+                                <!--FIXME 아래는 추후에 api 인터페이스 스펙이 정해지면 변경해야함-->
+                                <table class="table table-striped table-bordered table-hover" id="simpledatatable">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            No
+                                        </th>
+                                        <th>
+                                            Subject
+                                        </th>
+                                        <th>
+                                            Author
+                                        </th>
+                                        <th>
+                                            Reg Time
+                                        </th>
+                                        <td>
+                                            Book Status
+                                        </td>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- /Page Body -->
+
+            </div>
+            <!-- /Page Content -->
+
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+        <!--This is config props-->
+        <span id="bookUrl" style="display: none" th:text="${bookUrl}"></span>
+    </div>
+</div>
+
+<!--Basic Scripts-->
+<script src="/assets/js/jquery.min.js"></script>
+
+<!--Bootstrap Date Picker-->
+<script src="/assets/js/datetime/bootstrap-datepicker.js"></script>
+
+<!--Bootstrap Time Picker-->
+<script src="/assets/js/datetime/bootstrap-timepicker.js"></script>
+
+<!--Bootstrap Date Range Picker-->
+<script src="/assets/js/datetime/moment.js"></script>
+<script src="/assets/js/datetime/daterangepicker.js"></script>
+
+
+
+<!--Page Related Scripts-->
+<script src="/assets/js/datatable/jquery.dataTables.min.js"></script>
+<script src="/assets/js/datatable/ZeroClipboard.js"></script>
+<script src="/assets/js/datatable/dataTables.tableTools.min.js"></script>
+<script src="/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+
+<script src="/assets/js/moment/moment.min.js"></script>
+<script>
+
+    var searchForm = {dateRange : '', status : 0};
+
+
+    var bookUrl = $('#bookUrl').text();
+
+    $('#reservation').daterangepicker();
+    $(document).ready(this.initData());
+
+
+
+    // TODO 데이터 참고용 ex) { start : (currentPage * displayMaxLength) : number ,  length : displayMaxLength : number , searchForm : JSONObject : String}
+
+    function initData() {
+        var _moment = moment;
+        var _bookUrl = bookUrl;
+        var _searchForm = searchForm;
+
+        $('#simpledatatable').dataTable({
+            "processing": true,
+            "serverSide": true,
+            "bStateSave": true,
+            "ajax": {
+                "url": _bookUrl,
+                "data": function (data) {
+                    if (!(_searchForm.dateRange==='')) {
+                        data.search['date'] = _searchForm.dateRange;
+                    }
+                    data.search['status'] = _searchForm.status;
+                    data.searchForm = JSON.stringify(data.search);
+                    return data;
+                },
+                error : function(err){
+                    // TODO 에러 페이지 리다이렉트 하게끔 구현해놨음, 추후에 alert으로 바꾸던지 등은 자유.
+                    window.location.href = _bookUrl+"/error";
+                }
+            },
+            "searchable ": false,
+            "searching": false,
+            // FIXME 아래는 추후에 api 인터페이스 스펙이 정해지면 변경해야함
+            "columns": [
+                {
+                    "data": "no", render: function (data) {
+                        return "<a href='/book/detail/" + data + "'>" + data + "</a>";
+                    }
+                },
+                {"data": "subject"},
+                {"data": "author"},
+                {
+                    "data": "reg_date", render: function (data) {
+                        return _moment(data).format('YYYY-MM-DD');
+                    }
+                },
+                {
+                    "data": "book_type", render: function(data){
+                        switch (data){
+                            case 1 :
+                                return '<span class="label label-primary" style="cursor: text">Success</span>';
+                            case 2 :
+                                return '<span class="label label-warning" style="cursor: text">Fail</span>';
+                            default :
+                                return 'what';
+                        }
+                    }
+                }
+
+
+                ],
+            "bFilter": false,
+            "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
+            "iDisplayLength": 10,
+            "language": {
+                "search": "",
+                "sLengthMenu": "_MENU_",
+                "oPaginate": {
+                    "sPrevious": "Prev",
+                    "sNext": "Next"
+                }
+            },
+        });
+
+        $('#ToolTables_simpledatatable_4').hide();
+        $('#reservation').val('');
+    }
+
+    function renderDatable(){
+        $('#simpledatatable').DataTable().clear().draw();
+    }
+
+    function searchRender() {
+        var _searchForm = searchForm;
+        var reservation = $('#reservation').val();
+        var status = $('#status-area').val();
+        _searchForm.dateRange = reservation;
+        _searchForm.status = status;
+        renderDatable();
+    }
+
+    function searchReset(){
+        var _searchForm = searchForm;
+        $('#reservation').val('');
+        $('#status-area').val(0);
+        _searchForm.dateRange='';
+        _searchForm.status = 0;
+    }
+</script>
+</body>
+<!--  /Body -->
+</html>

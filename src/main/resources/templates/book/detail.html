@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 1.6.0
+Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB06R48S4
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns:th="http://www.thymeleaf.org">
+<!-- Head -->
+<head>
+    <meta charset="utf-8"/>
+    <title>Dashboard</title>
+
+    <meta name="description" content="Dashboard"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+<!-- Loading Container -->
+<div class="loading-container">
+    <div class="loader"></div>
+</div>
+<!--  /Loading Container -->
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="navbar-container">
+            <!-- Navbar Barnd -->
+            <div class="navbar-header pull-left">
+                <a href="/" class="navbar-brand">
+                    <small>
+                        <img style="width: 140px; height: 22px; margin-top: 9px" src="/assets/img/logo.png" alt=""/>
+                    </small>
+                </a>
+            </div>
+            <!-- /Navbar Barnd -->
+            <!-- Sidebar Collapse -->
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="collapse-icon fa fa-bars"></i>
+            </div>
+            <!-- /Sidebar Collapse -->
+            <!-- Account Area and Settings --->
+            <div class="navbar-header pull-right">
+                <div class="navbar-account">
+                    <ul class="account-area" style="margin-right: -40px">
+                        <li>
+                            <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                <section>
+                                    <h2 style="min-width: 100px"><span class="profile" style="text-align: right" sec:authorize="isAuthenticated()">
+                                        <span sec:authentication="name"></span>
+                                    </span></h2>
+                                </section>
+                            </a>
+                            <!--Login Area Dropdown-->
+                            <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                <li class="username"><a>Admin</a></li>
+                                <li class="dropdown-footer">
+                                    <a href="/auth/logout">
+                                        Sign out
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--/Login Area Dropdown-->
+                        </li>
+                        <!-- /Account Area -->
+                    </ul>
+                </div>
+            </div>
+            <!-- /Account Area and Settings -->
+        </div>
+    </div>
+</div>
+<!-- /Navbar -->
+<!-- Main Container -->
+<div class="main-container container-fluid">
+    <!-- Page Container -->
+    <div class="page-container">
+
+        <!-- Page Sidebar -->
+        <div class="page-sidebar" id="sidebar">
+            <!-- Page Sidebar Header-->
+            <!--<div class="sidebar-header-wrapper">-->
+                <!--<input type="text" class="searchinput"/>-->
+                <!--<i class="searchicon fa fa-search"></i>-->
+                <!--<div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>-->
+            <!--</div>-->
+            <!-- /Page Sidebar Header -->
+            <!-- Sidebar Menu -->
+            <ul class="nav sidebar-menu">
+                <!--Dashboard-->
+                <li>
+                    <a href="/">
+                        <i class="menu-icon glyphicon glyphicon-home"></i>
+                        <span class="menu-text"> Home </span>
+                    </a>
+                </li>
+                <!--More Pages-->
+                <li class="open">
+                    <a class="menu-dropdown" href="#">
+                        <i class="menu-icon glyphicon glyphicon-link"></i>
+
+                        <span class="menu-text">
+                                Book Manager
+                            </span>
+
+                        <i class="menu-expand"></i>
+                    </a>
+
+                    <ul class="submenu" style="display:block;">
+                        <li>
+                            <a href="/book/list">
+                                <span class="menu-text">Book List</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--<li>-->
+                    <!--<a href="javascript:void(0)">-->
+                        <!--<i class="menu-icon glyphicon glyphicon-fire themesecondary"></i>-->
+                        <!--<span class="menu-text">-->
+                                <!--Version 0.0.1-->
+                            <!--</span>-->
+                    <!--</a>-->
+                <!--</li>-->
+            </ul>
+            <!-- /Sidebar Menu -->
+        </div>
+        <!-- /Page Sidebar -->
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Breadcrumb -->
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        Book Manager
+                    </li>
+                    <li>Book List</li>
+                    <li class="active">Detail</li>
+                </ul>
+            </div>
+            <!-- /Page Breadcrumb -->
+            <!-- Page Body -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="widget">
+                            <div class="widget-header">
+                                <span class="widget-caption">Book Detail</span>
+                                <div class="widget-buttons">
+                                    <!--<a href="#" data-toggle="maximize">-->
+                                        <!--<i class="fa fa-expand"></i>-->
+                                    <!--</a>-->
+                                    <a href="#" data-toggle="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                    <a href="#" data-toggle="dispose">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div><!--Widget Buttons-->
+                            </div><!--Widget Header-->
+                            <div class="widget-body no-padding">
+                                <div class="widget-main">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th width="30%">Header</th>
+                                            <th>Data Area</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                Message ID
+                                            </td>
+                                            <td>
+                                                <p th:text="${id}"></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Target</td>
+                                            <td>
+                                                <p th:text="${target}"></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Request Time</td>
+                                            <td>
+                                                <p th:text="${req_time}" class="text-muted"></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Transmitted Time</td>
+                                            <td>
+                                                <p th:text="${trans_time}" class="text-muted"></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Status</td>
+                                            <td>
+                                                <p th:text="${status}" class="text-muted">Success</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Conent</td>
+                                            <td>
+                                                <p class="text-muted">
+                                                    <a class="btn btn-default purple" th:href="${download}" blank>Download</a>
+                                                </p>
+                                            </td>
+
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div><!--Widget Main Container-->
+                            </div><!--Widget Body-->
+
+                        </div><!--Widget Body-->
+                    </div><!--Widget-->
+                </div>
+            </div>
+
+            <!-- /Page Body -->
+
+        </div>
+        <!-- /Page Content -->
+
+    </div>
+    <!-- /Page Container -->
+    <!-- Main Container -->
+
+</div>
+<!--Basic Scripts-->
+<script src="/assets/js/jquery.min.js"></script>
+</body>
+<!--  /Body -->
+</html>

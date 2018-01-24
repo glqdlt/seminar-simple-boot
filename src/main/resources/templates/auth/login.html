@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 1.6.0
+Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB06R48S4
+-->
+
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<!--Head-->
+<head>
+    <meta charset="utf-8"/>
+    <title>Login Page</title>
+
+    <meta name="description" content="login page"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+
+</head>
+<!--Head Ends-->
+<!--Body-->
+<body>
+
+
+<div class="login-container animated fadeInDown">
+    <div class="loginbox bg-white" id="formData">
+        <div class="loginbox-title" style="margin-bottom: 50px;">
+            <p style="margin-top: 13px">LoginForm</p>
+        </div>
+
+        <form th:action="@{/auth/login}" method="post">
+            <fieldset>
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">
+                        <span style="text-align: center">Invalid username and password.</span>
+                    </div>
+                </div>
+                <div th:if="${param.logout}">
+                    <div class="alert alert-info">
+                        You have been logged out.
+                    </div>
+                </div>
+
+                <div class="loginbox-textbox">
+                    <input type="text" name="id" class="form-control" placeholder="Input Id.."/>
+                </div>
+                <div class="loginbox-textbox">
+                    <input type="password" name="password" class="form-control" placeholder="Input Password.."/>
+                </div>
+
+                <div class="loginbox-submit">
+                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"/>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<!--Basic Scripts-->
+<script src="/assets/js/jquery.min.js"></script>
+
+</body>
+<!--Body Ends-->
+</html>
